@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/stats.py",
+      "use": "@vercel/python",
+      "config": { "maxDuration": 30 }
+    }
+  ],
+  "routes": [
+    { "src": "/api/stats", "dest": "api/stats.py" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}

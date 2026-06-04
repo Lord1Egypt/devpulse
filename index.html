@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevPulse — GitHub Portfolio & Dynamic Badge Builder</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Header -->
+    <header>
+      <h1>DevPulse</h1>
+      <p>Analyze your GitHub profile and build gorgeous, live stats cards for your READMEs.</p>
+    </header>
+
+    <!-- Search Input Panel -->
+    <div class="panel">
+      <div class="search-box">
+        <input type="text" id="usernameInput" placeholder="Enter your GitHub username (e.g., Lord1Egypt)..." value="Lord1Egypt">
+        <button id="searchBtn">Generate</button>
+      </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="panel hidden" style="text-align: center; padding: 50px 0;">
+      <div style="font-size: 1.5rem; margin-bottom: 15px; color: var(--accent-color);">⏳ Analyzing GitHub Profile...</div>
+      <p style="color: var(--text-muted);">Fetching repository statistics and building visual cards.</p>
+    </div>
+
+    <!-- Main Dashboard Grid -->
+    <div id="dashboard" class="dashboard-grid hidden">
+      
+      <!-- Left Sidebar: Profile & Stats -->
+      <div style="display: flex; flex-direction: column; gap: 30px;">
+        
+        <!-- Profile Panel -->
+        <div class="panel profile-card">
+          <div class="avatar-wrapper">
+            <img id="userAvatar" src="" alt="User Avatar">
+          </div>
+          <h2 id="userName">Akim</h2>
+          <div class="username" id="userLogin">@Lord1Egypt</div>
+          <p class="bio" id="userBio">Full stack developer and AI tools enthusiast.</p>
+          
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="val" id="statRepos">0</span>
+              <span class="lbl">Repos</span>
+            </div>
+            <div class="stat-item">
+              <span class="val" id="statStars">0</span>
+              <span class="lbl">Stars</span>
+            </div>
+            <div class="stat-item">
+              <span class="val" id="statForks">0</span>
+              <span class="lbl">Forks</span>
+            </div>
+            <div class="stat-item">
+              <span class="val" id="statFollowers">0</span>
+              <span class="lbl">Followers</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- Right Column: Badge Designer -->
+      <div style="display: flex; flex-direction: column; gap: 30px;">
+        
+        <!-- Designer Panel -->
+        <div class="panel badge-designer">
+          <div>
+            <h3 class="designer-title">🎨 Customize Your GitHub Stats Badge</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Choose a style configuration and paste the Markdown directly into your profile README.md.</p>
+          </div>
+          
+          <!-- Theme buttons -->
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Select Theme</label>
+            <div class="theme-selector">
+              <button class="theme-btn active" data-theme-name="dark">Dark Theme</button>
+              <button class="theme-btn" data-theme-name="light">Light Theme</button>
+              <button class="theme-btn" data-theme-name="cyber">Cyber Cyan</button>
+              <button class="theme-btn" data-theme-name="neon">Neon Magenta</button>
+            </div>
+          </div>
+          
+          <!-- Badge Live Preview -->
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Live Preview</label>
+            <div class="badge-preview">
+              <img id="badgePreviewImg" src="" alt="Grounded Badge Card Preview">
+            </div>
+          </div>
+          
+          <!-- Copy Codes -->
+          <div class="copy-area">
+            <label>Markdown Code (For GitHub profile README.md)</label>
+            <div class="copy-input-group">
+              <input type="text" id="markdownCode" readonly>
+              <button id="copyMdBtn">Copy</button>
+            </div>
+          </div>
+
+          <div class="copy-area">
+            <label>Direct Image URL</label>
+            <div class="copy-input-group">
+              <input type="text" id="imageUrlCode" readonly>
+              <button id="copyUrlBtn">Copy</button>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>DevPulse &middot; <a href="https://github.com/Lord1Egypt/devpulse" target="_blank">View Repository</a></p>
+      <p style="margin-top: 8px;">Made with ❤️ by <a href="https://github.com/Lord1Egypt" target="_blank">Lord1Egypt</a></p>
+    </footer>
+
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
