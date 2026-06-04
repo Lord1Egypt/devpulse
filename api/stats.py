@@ -103,7 +103,8 @@ def generate_svg(username: str, profile: dict, repos: list, theme_name: str) -> 
         <!-- Header -->
         <g transform="translate(25, 35)">
             <text x="0" y="0" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="18" fill="{theme['text_primary']}" font-weight="bold">{profile.get('name') or username}</text>
-            <text x="0" y="18" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="{theme['text_secondary']}">@{username} &middot; GitHub Pulse</text>
+            <text x="0" y="18" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="{theme['text_secondary']}">@{username} &#183; GitHub Pulse</text>
+
         </g>
         
         <!-- Metrics -->
