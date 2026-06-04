@@ -39,11 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const base = getBaseUrl();
     const badgeUrl = `${base}/api/stats?username=${currentUsername}&theme=${activeTheme}`;
     
-    // Set previews
-    badgePreviewImg.src = badgeUrl;
+    // Set previews (append timestamp cache-buster to bypass cached 404s)
+    badgePreviewImg.src = `${badgeUrl}&t=${Date.now()}`;
     imageUrlCode.value = badgeUrl;
     markdownCode.value = `[![DevPulse Profile Stats](${badgeUrl})](https://github.com/${currentUsername})`;
   };
+
 
   const fetchGithubStats = async (username) => {
     loader.classList.remove("hidden");
